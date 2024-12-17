@@ -23,7 +23,7 @@ pipeline {
                 expression { currentBuild.result == 'SUCCESS' }
             }
             steps {
-                sh 'source ./Game-Portal-on-EKS-Cluster/create_eks_cluster.sh'
+                sh 'source ./Game-Portal-on-EKS-Cluster/bash_script/create_eks_cluster.sh'
                 sh 'create_eks_using_terraform'
             }
         }
@@ -51,7 +51,7 @@ pipeline {
                 expression { currentBuild.result == 'SUCCESS' }
             }
             steps {
-                sh 'source ./Game-Portal-on-EKS-Cluster/deploy_2048_argo_app.sh'
+                sh 'source ./Game-Portal-on-EKS-Cluster/bash_script/deploy_2048_argo_app.sh'
                 sh 'deploy_argocd'
             }
         }
