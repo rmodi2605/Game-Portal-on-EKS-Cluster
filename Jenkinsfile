@@ -81,9 +81,7 @@ pipeline {
             sh '''
                 echo "Cleaning up after deployment"
                 cd /var/lib/jenkins/workspace
-                rm 2048-application.yaml
-                cd ~
-                rm -rf Game-Portal-on-EKS-Cluster
+                rm -rf *
                 pwd
                 echo ""
                 ls -la 
