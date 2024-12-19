@@ -5,7 +5,7 @@
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 function create_eks_using_terraform () {
     git clone https://github.com/rmodi2605/Game-Portal-on-EKS-Cluster.git
-    sleep 2s ;  cd Game-Portal-on-EKS-Cluster/bash_script/eks_cluster ; chmod +x *
+    sleep 2s ;  cd /var/lib/jenkins/Game-Portal-on-EKS-Cluster/eks_cluster ; chmod +x *
     terraform init ; sleep 15s
     validate=$(terraform validate)
     if [[ $validate == *Success* ]];
