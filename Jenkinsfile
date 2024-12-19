@@ -46,7 +46,7 @@ pipeline {
             }
         }
         
-        stage ("Deploy Argo CD in EKS Cluster") {
+        /*stage ("Deploy Argo CD in EKS Cluster") {
             when {
                 expression { currentBuild.result == 'SUCCESS' }
             }
@@ -72,17 +72,21 @@ pipeline {
             steps {
                 sh 'verify_2048_app'
             }
-        }
+        }*/
 
     }
 
      post {
         always {
-            echo "Cleaning up after deployment"
             sh '''
+                echo "Cleaning up after deployment"
+                cd /var/lib/jenkins/workspace
                 rm 2048-application.yaml
                 cd ~
                 rm -rf Game-Portal-on-EKS-Cluster
+                pwd
+                echo ""
+                ls -la 
             '''
         }
     }
