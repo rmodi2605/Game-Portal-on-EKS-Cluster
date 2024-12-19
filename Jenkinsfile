@@ -80,8 +80,8 @@ pipeline {
         always {
             sh '''
                 echo "Cleaning up after deployment"
-                cd /var/lib/jenkins/workspace
-                rm -rf *
+                cd /var/lib/jenkins/  
+                rm -rf Game-Portal-on-EKS-Cluster
                 pwd
                 echo ""
                 ls -la 
