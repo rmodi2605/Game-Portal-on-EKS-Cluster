@@ -9,14 +9,22 @@ pipeline {
             }
         }
 
-        stage ("Clone Git Repo") {
+        stage ("Git Repository Clone") {
+            steps {
+                   git branch: 'main', 
+                   credentialsId: 'your-credentials-id', 
+                   url: 'https://github.com/rmodi2605/Game-Portal-on-EKS-Cluster.git'
+            }
+        }
+
+        /*stage ("Clone Git Repo") {
             steps {
                 sh '''
                     cd ~
                     git clone https://github.com/rmodi2605/Game-Portal-on-EKS-Cluster.git
                 '''
             }
-        }
+        }*/
 
         stage ("Create EKS Cluster by using Terraform") {
             when {
