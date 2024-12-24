@@ -12,7 +12,7 @@ pipeline {
         stage ("Git Repository Clone") {
             steps {
                    git branch: 'main', 
-                   credentialsId: 'your-credentials-id', 
+                   credentialsId: 'Game-Portal-on-EKS-Cluster', 
                    url: 'https://github.com/rmodi2605/Game-Portal-on-EKS-Cluster.git'
             }
         }
